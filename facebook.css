@@ -1,0 +1,148 @@
+form {
+    background-color: white;
+    border-radius: 10px;
+    height: 350px;
+    width: 400px;
+    position: fixed;
+    border: solid thick white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.17);
+}
+
+body {
+    background-color: #ecf0f3;
+}
+.a {
+    /* width: 80%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px; */
+    display: flex;
+}
+
+.hood {
+    color: white;
+    padding-right: center;
+}
+
+#href {
+    background-color: #1877F2;
+    margin-top: 20px;
+    border: 1px;
+    border-color: #1877F2;
+    font-size: large;
+    color: white;
+    margin-left: 22px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #1877F2;
+}
+
+hr {
+    color: #ecf0f3;
+}
+
+a.in {
+    color: whitesmoke;
+    border: thin solid rgb(83, 83, 244);
+}
+
+#thin {
+    margin-top: 5px;
+}
+
+input {
+    margin-top: 20px;
+    margin-left: 22px;
+    border-radius: 5px;
+    border: 2px solid #ecf0f3;
+    width: 350px;
+    height: 40px;
+    border-color: #ecf0f3;
+    text-indent: 10px;
+    font-size: 16px;
+}
+input:active {
+    border-color: blue;
+}
+
+body {
+    padding-top: 130px;
+    padding-right: 250px;
+    padding-left: 300px;
+}
+
+#feel {
+    flex: 1;
+    font-size: larger;
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 35px;
+    font: bolder;
+    font-family: klavika;
+    display: inline;
+}
+
+a:active {
+    color: blue;
+}
+
+#cur {
+    font-family: 'Nunito', sans-serif;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+}
+
+hr {
+    height: 0;
+    background-color: #ecf0f3;
+    border: thin solid #ecf0f3;
+}
+
+#draw {
+    font-size: 75px;
+    color: #1877F2;
+}
+
+#date {
+    background-color: rgb(63, 184, 63);
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 100px;
+    margin-right: 80px;
+    padding-top: 15px;
+    margin-top: 10px;
+    /* border-color: rgb(63, 184, 63); */
+    /* height: 10px; */
+    padding-bottom: 15px;
+}
+
+#class {
+    margin-top: 55px;
+    margin-left: 35px;
+}
+
+a {
+    text-decoration: solid none;
+  color: white;
+}
