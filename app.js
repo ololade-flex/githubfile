@@ -1,38 +1,55 @@
-let currentPlayer = 'X';
-let cells = document.querySelectorAll('.cell');
+const p1 = {
+    score: 0,
+    button: document.querySelector('#p1Button'),
+    display: document.querySelector('#p1Display')
+}
+const p2 = {
+    score: 0,
+    button: document.querySelector('#p2Button'),
+    display: document.querySelector('#p2Display')
+}
 
-function place(cellIndex) {
-    if (cells[cellIndex].textContent === '') {
-        cells[cellIndex].textContent = currentPlayer;
-        if (checkWin()) {
-            alert('Player ' + currentPlayer + ' wins!');
-            resetGame();
-        } else if ([...cells].every(cell => cell.textContent !== '')) {
-            alert('For draw!');
-            resetGame();
-        } else {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+const resetButton = document.querySelector('#reset');
+const winningScoreSelect = document.querySelector('#playto');
+let winningScore = 3;
+let isGameOver = false;
+
+function updateScores(player, opponent) {
+    if (!isGameOver) {
+        player.score += 1;
+        if (player.score === winningScore) {
+            isGameOver = true;
+            player.display.classList.add('has-text-success');
+            opponent.display.classList.add('has-text-danger');
+            player.button.disabled = true;
+            opponent.button.disabled = true;
         }
+        player.display.textContent = player.score;
     }
 }
 
-function checkWin() {
-    const winCombos = [
-        [0, 1, 2], [3, 4, 5], [6, 7, 8],
-        [0, 3, 6], [1, 4, 7], [2, 5, 8],
-        [0, 4, 8], [2, 4, 6]
-    ];
-    for (const combo of winCombos) {
-        if (cells[combo[0]].textContent === currentPlayer &&
-            cells[combo[1]].textContent === currentPlayer &&
-            cells[combo[2]].textContent === currentPlayer) {
-            return true;
-        }
-    }
-    return false;
-}
 
-function resetGame() {
-    cells.forEach(cell => cell.textContent = '');
-    currentPlayer = 'X';
+p1.button.addEventListener('click', function () {
+    updateScores(p1, p2)
+})
+p2.button.addEventListener('click', function () {
+    updateScores(p2, p1)
+})
+
+
+winningScoreSelect.addEventListener('change', function () {
+    winningScore = parseInt(this.value);
+    reset();
+})
+
+resetButton.addEventListener('click', reset)
+
+function reset() {
+    isGameOver = false;
+    for (let p of [p1, p2]) {
+        p.score = 0;
+        p.display.textContent = 0;
+        p.display.classList.remove('has-text-success', 'has-text-danger');
+        p.button.disabled = false;
+    }
 }
