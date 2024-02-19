@@ -1,0 +1,28 @@
+* {
+    background-color: #b7e4c7;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #52b788;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cell:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    height: 100.9px;
+    width: 100.9px;
+}
